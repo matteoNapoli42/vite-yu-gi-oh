@@ -15,8 +15,8 @@ export default {
         <AppHeader />
     </header>
 
-    <main class="container">
-
+    <main>
+        <AppCards />
     </main>
 </template>
 
