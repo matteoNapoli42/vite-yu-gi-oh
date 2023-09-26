@@ -1,6 +1,19 @@
 <script>
+import { state } from '../state'
 export default {
+    name: 'AppCards',
+    data() {
+        return {
+            state
+        }
+    },
+    methods: {
 
+    },
+
+    created() {
+        state.fetchData()
+    }
 }
 </script>
 
@@ -24,9 +37,11 @@ export default {
                     </div>
                     <div class="container w-75 flex-wrap px-0 d-flex gap-4">
                         <div class="col-2">
-                            <div>Immagine Carta</div>
+                            <div>
+                                <img :src="state.cards" alt="">
+                            </div>
                             <div style="background-color: orange;">
-                                <h6>Nome Carta</h6>
+                                <h6>{{ state.cards }}</h6>
                                 <span>Tipo Carta</span>
                             </div>
 
