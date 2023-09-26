@@ -4,7 +4,7 @@ export default {
     name: 'AppCards',
     data() {
         return {
-            state
+            state,
         }
     },
     methods: {
@@ -12,7 +12,7 @@ export default {
     },
 
     created() {
-        state.fetchData()
+        state.fetchData();
     }
 }
 </script>
@@ -20,8 +20,8 @@ export default {
 <template>
     <section id="cardBox">
         <div class="dropdown container py-4">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown button
+            <button class="btn  bg-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Alien
             </button>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -36,16 +36,17 @@ export default {
                         <h3 style="color : white">Found X Cards</h3>
                     </div>
                     <div class="container w-75 flex-wrap px-0 d-flex gap-4">
-                        <div class="col-2">
+                        <div class="col-2" v-for="cards in state.cards">
                             <div>
-                                <img :src="state.cards" alt="">
+                                <img :src='cards.card_images[0].image_url_small' alt="">
                             </div>
-                            <div style="background-color: orange;">
-                                <h6>{{ state.cards }}</h6>
-                                <span>Tipo Carta</span>
+                            <div style="background-color: darkorange;">
+                                <h6>{{ cards.name }}</h6>
+                                <span>{{ cards.archetype }}</span>
                             </div>
 
                         </div>
+                        <!--
                         <div class="col-2">
                             <div>Immagine Carta</div>
                             <div style="background-color: orange;">
@@ -74,7 +75,9 @@ export default {
                                 <span>Tipo Carta</span>
                             </div>
                         </div>
+                         -->
                     </div>
+
 
                 </div>
             </div>
@@ -85,7 +88,7 @@ export default {
 
 <style scoped>
 #cardBox {
-    background-color: orange;
+    background-color: darkorange;
     height: 1300px;
 }
 
