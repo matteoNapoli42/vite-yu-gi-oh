@@ -1,22 +1,22 @@
 <script>
 export default {
     name: "Card",
-
-    data() {
-        return {
-            card: Object
-        }
+    props: {
+        elem: Object,
     },
+
+    created() {
+        console.log(this.elem);
+    }
 }
 
 </script>
 <template>
-    <div class="container w-75 flex-wrap px-0 d-flex gap-4">
-        <div class="col-2 cardDetails d-flex flex-column text-center" style="background-color: darkorange;">
-            <img alt="" style="width: 100%;">
-            <h6 style="color : white"></h6>
-            <span></span>
-        </div>
+    <div class="col-2 cardDetails d-flex flex-column text-center" style="background-color: darkorange;">
+        <img :src="elem.card_images[0].image_url_small" alt="">
+        <h6 style="color : red">{{ elem.name }}</h6>
+        <span>{{ elem.archetype }}</span>
+
     </div>
 </template>
 

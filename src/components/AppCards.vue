@@ -40,9 +40,9 @@ export default {
                     <h3 style="color : white">Found {{ state.length }} Cards</h3>
                 </div>
                 <div class="container">
-                    <Card />
-
-
+                    <div class="container w-75 flex-wrap px-0 d-flex gap-4">
+                        <Card v-for="card in state.cards" :elem="card" />
+                    </div>
                 </div>
             </div>
         </div>
