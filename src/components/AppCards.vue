@@ -1,12 +1,17 @@
 <script>
 import { state } from '../state'
+import Card from '../components/Card.vue'
 export default {
     name: 'AppCards',
+    components: {
+        Card,
+    },
     data() {
         return {
             state,
         }
     },
+
     methods: {
 
     },
@@ -31,52 +36,11 @@ export default {
         </div>
         <div id="cardShowOuterFrame" class="container m-auto my-3">
             <div class="container py-5" id="cardShowInnerFrame">
+                <div class="w-75 bg-black m-auto">
+                    <h3 style="color : white">Found {{ state.length }} Cards</h3>
+                </div>
                 <div class="container">
-                    <div class="w-75 bg-black m-auto">
-                        <h3 style="color : white">Found X Cards</h3>
-                    </div>
-                    <div class="container w-75 flex-wrap px-0 d-flex gap-4">
-                        <div class="col-2" v-for="cards in state.cards">
-                            <div>
-                                <img :src='cards.card_images[0].image_url_small' alt="">
-                            </div>
-                            <div style="background-color: darkorange;">
-                                <h6>{{ cards.name }}</h6>
-                                <span>{{ cards.archetype }}</span>
-                            </div>
-
-                        </div>
-                        <!--
-                        <div class="col-2">
-                            <div>Immagine Carta</div>
-                            <div style="background-color: orange;">
-                                <h6>Nome Carta</h6>
-                                <span>Tipo Carta</span>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div>Immagine Carta</div>
-                            <div style="background-color: orange;">
-                                <h6>Nome Carta</h6>
-                                <span>Tipo Carta</span>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div>Immagine Carta</div>
-                            <div style="background-color: orange;">
-                                <h6>Nome Carta</h6>
-                                <span>Tipo Carta</span>
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <div>Immagine Carta</div>
-                            <div style="background-color: orange;">
-                                <h6>Nome Carta</h6>
-                                <span>Tipo Carta</span>
-                            </div>
-                        </div>
-                         -->
-                    </div>
+                    <Card />
 
 
                 </div>
@@ -86,10 +50,10 @@ export default {
     </section>
 </template>
 
-<style scoped>
+<style>
 #cardBox {
     background-color: darkorange;
-    height: 1300px;
+    min-height: 1000px;
 }
 
 #cardShowOuterFrame {
