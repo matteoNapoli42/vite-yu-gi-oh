@@ -5,15 +5,24 @@ export default {
         elem: Object
     },
 
-    created() {
-        console.log(this.elem);
+    data() {
+        return {
+            selectedValue: "",
+        }
+    },
 
-    }
+    methods: {
+        getValue() {
+            console.log(this.value);
+        }
+
+    },
 }
 </script>
 
 <template>
-    <option value="{{ elem.archetype_name }}"> {{ elem.archetype_name }}</option>
+    <option :value="elem.archetype_name"> {{ elem.archetype_name }}
+    </option>
 </template>
 
 <style></style>

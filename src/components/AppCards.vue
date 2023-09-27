@@ -11,11 +11,14 @@ export default {
     data() {
         return {
             state,
+            selectedValue: "",
         }
     },
 
     methods: {
-
+        getValue(elem) {
+            console.log(elem);
+        }
     },
 
     created() {
@@ -28,7 +31,8 @@ export default {
 <template>
     <section id="cardBox">
         <div class="dropdown container py-4">
-            <select class="form-select w-25" aria-label="Default select example">
+            <select class="form-select w-25" aria-label="Default select example" v-model="selectedValue"
+                @change="getValue(selectedValue)">
                 <option selected>Open this select menu</option>
                 <DropDown v-for="archetype in state.cardsArchetype" :elem="archetype" />
             </select>
