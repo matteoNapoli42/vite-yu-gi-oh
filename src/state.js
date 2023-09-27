@@ -22,5 +22,19 @@ export const state = reactive({
                 this.cardsArchetype = response.data;
                 console.log("STATE ARCHETYPES", this.cardsArchetype);
             })
+    },
+
+
+    filterCards(param) {
+        if (param == "")
+            return
+        else
+            axios(`${this.base_url}&archetype=${param}`)
+                .then(response => {
+                    console.log(response.data.data);
+                    this.cards = response.data.data;
+                    console.log("QUI I RISULTATI EVENTUAL", this.cards)
+                })
     }
-})
+}
+)

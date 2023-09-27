@@ -16,9 +16,6 @@ export default {
     },
 
     methods: {
-        getValue(elem) {
-            console.log(elem);
-        }
     },
 
     created() {
@@ -32,9 +29,12 @@ export default {
     <section id="cardBox">
         <div class="dropdown container py-4">
             <select class="form-select w-25" aria-label="Default select example" v-model="selectedValue"
-                @change="getValue(selectedValue)">
+                @change="$emit(state.filterCards(selectedValue))">
                 <option selected>Open this select menu</option>
-                <DropDown v-for="archetype in state.cardsArchetype" :elem="archetype" />
+                <option v-for=" archetype in state.cardsArchetype" :value="archetype.archetype_name">{{
+                    archetype.archetype_name }}
+                </option>
+                <!--<DropDown v-for="archetype in state.cardsArchetype" :elem="archetype" />-->
             </select>
         </div>
 
