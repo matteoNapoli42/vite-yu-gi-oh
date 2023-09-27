@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <li class="overflow-hidden"><a class="dropdown-item overflow-hidden" href="#">{{ elem.archetype_name }}</a></li>
+    <li><a class="dropdown-item" href="#">{{ elem.archetype_name }}</a></li>
 </template>
 
 <style></style>

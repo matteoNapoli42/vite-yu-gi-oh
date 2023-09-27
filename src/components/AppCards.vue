@@ -29,6 +29,7 @@ export default {
     <section id="cardBox">
         <div class="dropdown container py-4">
             <button class="btn  bg-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ }}
             </button>
             <div class="dropdown container py-4">
                 <ul class="dropdown-menu overflow-auto">
@@ -57,7 +58,7 @@ export default {
 <style>
 #cardBox {
     background-color: darkorange;
-    min-height: 1000px;
+    min-height: 1080px;
 }
 
 #cardShowOuterFrame {
@@ -67,5 +68,9 @@ export default {
 #cardShowInnerFrame {
     background-color: white;
     height: 100%;
+}
+
+.dropdown-menu {
+    max-height: 200px;
 }
 </style>
