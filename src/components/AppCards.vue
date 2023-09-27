@@ -1,10 +1,12 @@
 <script>
 import { state } from '../state'
 import Card from '../components/Card.vue'
+import DropDown from '../components/DropDown.vue'
 export default {
     name: 'AppCards',
     components: {
         Card,
+        DropDown
     },
     data() {
         return {
@@ -18,6 +20,7 @@ export default {
 
     created() {
         state.fetchData();
+        state.fetchArchetype();
     }
 }
 </script>
@@ -26,14 +29,15 @@ export default {
     <section id="cardBox">
         <div class="dropdown container py-4">
             <button class="btn  bg-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Alien
             </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <div class="dropdown container py-4">
+                <ul class="dropdown-menu overflow-auto">
+                    <DropDown v-for="archetype in state.cardsArchetype" :elem="archetype" />
+                </ul>
+            </div>
         </div>
+
+
         <div id="cardShowOuterFrame" class="container m-auto my-3">
             <div class="container py-5" id="cardShowInnerFrame">
                 <div class="w-75 bg-black m-auto">
