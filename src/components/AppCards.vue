@@ -28,14 +28,10 @@ export default {
 <template>
     <section id="cardBox">
         <div class="dropdown container py-4">
-            <button class="btn  bg-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                {{ }}
-            </button>
-            <div class="dropdown container py-4">
-                <ul class="dropdown-menu overflow-auto">
-                    <DropDown v-for="archetype in state.cardsArchetype" :elem="archetype" />
-                </ul>
-            </div>
+            <select class="form-select w-25" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <DropDown v-for="archetype in state.cardsArchetype" :elem="archetype" />
+            </select>
         </div>
 
 
@@ -68,9 +64,5 @@ export default {
 #cardShowInnerFrame {
     background-color: white;
     height: 100%;
-}
-
-.dropdown-menu {
-    max-height: 200px;
 }
 </style>

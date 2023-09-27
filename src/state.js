@@ -2,7 +2,7 @@ import axios from "axios";
 import { reactive } from "vue";
 
 export const state = reactive({
-    base_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0',
+    base_url: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=100&offset=0',
     archetype_url: 'https://db.ygoprodeck.com/api/v7/archetypes.php',
     cards: null,
     cardsArchetype: null,

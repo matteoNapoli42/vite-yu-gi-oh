@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <li><a class="dropdown-item" href="#">{{ elem.archetype_name }}</a></li>
+    <option value="{{ elem.archetype_name }}"> {{ elem.archetype_name }}</option>
 </template>
 
 <style></style>
